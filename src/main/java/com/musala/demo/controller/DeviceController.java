@@ -23,7 +23,7 @@ public class DeviceController {
 	@RequestMapping(value = "/create", method = RequestMethod.POST)
 	public ResponseEntity<MusalaResponce> create(@RequestBody DeviceCreateRequest createRequest) throws Exception{
 
-		String status = deviceService.saveGateway(createRequest);
+		String status = deviceService.saveDevice(createRequest);
 
 		MusalaResponce musalaResponce =new MusalaResponce();
 		musalaResponce.setResponseCode("000");
