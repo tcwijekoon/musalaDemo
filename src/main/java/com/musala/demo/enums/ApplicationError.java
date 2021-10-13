@@ -13,6 +13,7 @@ public enum ApplicationError {
     INVALID_DATE("005","Invalid Date"),
     NAME_REQUIRED("005","Name required"),
     VENDOR_REQUIRED("005","Vendor required"),
+    MAX_DEVICES_ADDED("005","Maximum devices added for the Gateway"),
     CREATED_DATE_REQUIRED("005","Created Date required"),
     STATUS_REQUIRED("005","Status required"),
     INVALID_STATUS("005","Invalid Status"),
