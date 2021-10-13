@@ -34,7 +34,7 @@ public class DeviceServiceImpl implements DeviceService {
     @Override
     public String saveDevice(DeviceCreateRequest createRequest) {
         if (createRequest.getGatewayId() != null) {
-//            if (getDevicesByGatewayId(createRequest.getGatewayId()).size() > 10) {
+            if (getDeviceByGatewayId(createRequest.getGatewayId()).size() <= 10) {
                 if (MusalaUtill.isStringNullOrEmpty(createRequest.getVendor())) {
                     if (MusalaUtill.isStringNullOrEmpty(createRequest.getCreatedDate())) {
                         if (MusalaUtill.isStringNullOrEmpty(createRequest.getStatus())) {
@@ -77,9 +77,9 @@ public class DeviceServiceImpl implements DeviceService {
                 } else {
                     throw new MusalaException(ApplicationError.VENDOR_REQUIRED);
                 }
-//            } else {
-//                throw new MusalaException(ApplicationError.MAX_DEVICES_ADDED);
-//            }
+            } else {
+                throw new MusalaException(ApplicationError.MAX_DEVICES_ADDED);
+            }
         } else {
             throw new MusalaException(ApplicationError.INVALID_GATEWAY_ID);
         }
